@@ -3,19 +3,6 @@ import {Button, Container, Form, Grid} from "semantic-ui-react";
 
 
 class SpectralControl extends Component {
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      col: 'a'
-    };
-
-    this.handleColChange = this.handleColChange.bind(this);
-  }
-
-  handleColChange = (e, col) => this.setState({col: col.value});
-
   render() {
     return (
       <Container>
@@ -41,14 +28,10 @@ class SpectralControl extends Component {
             <Form.Radio
               label="Automatic"
               value="a"
-              checked={this.state.col === 'a'}
-              onChange={this.handleColChange}
             />
             <Form.Radio
               label="Manual"
               value="m"
-              checked={this.state.col === 'm'}
-              onChange={this.handleColChange}
             />
             <Form.Select/>
           </Form.Group>
