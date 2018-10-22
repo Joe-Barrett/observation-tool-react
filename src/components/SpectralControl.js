@@ -1,8 +1,21 @@
 import React, {Component} from 'react';
+import {bool, string, func} from 'prop-types';
 import {Button, Container, Form, Grid} from "semantic-ui-react";
 
 
 class SpectralControl extends Component {
+
+  static propTypes = {
+    receiver: bool,
+    onReceiverChange: func,
+    transmission: bool,
+    onTransmissionChange: func,
+    dsb: bool,
+    onDsbChange: func,
+    lines: bool,
+    onLinesChange: func
+  };
+
   render() {
     return (
       <Container>
@@ -16,10 +29,26 @@ class SpectralControl extends Component {
         <Form>
           <Form.Group inline>
             <label>Overlays</label>
-            <Form.Checkbox label="Receiver Bands"/>
-            <Form.Checkbox label="Transmission"/>
-            <Form.Checkbox label="DSB Image"/>
-            <Form.Checkbox label="Spectral Lines"/>
+            <Form.Checkbox
+              label="Receiver Bands"
+              checked={this.props.receiver}
+              onChange={this.props.onReceiverChange}
+            />
+            <Form.Checkbox
+              label="Transmission"
+              checked={this.props.transmission}
+              onChange={this.props.onTransmissionChange}
+            />
+            <Form.Checkbox
+              label="DSB Image"
+              checked={this.props.dsb}
+              onChange={this.props.onDsbChange}
+            />
+            <Form.Checkbox
+              label="Spectral Lines"
+              checked={this.props.lines}
+              onChange={this.props.onLinesChange}
+            />
             <Form.Button labelPosition='left' compact size="tiny" color="blue" icon="signal"
                          content="Select Lines to Overlay"/>
           </Form.Group>
@@ -28,12 +57,14 @@ class SpectralControl extends Component {
             <Form.Radio
               label="Automatic"
               value="a"
+              checked={this.props.col === 'a'}
             />
             <Form.Radio
               label="Manual"
               value="m"
+              checked={this.props.col === 'm'}
             />
-            <Form.Select/>
+            {/*<Form.Select/>*/}
           </Form.Group>
         </Form>
       </Container>
