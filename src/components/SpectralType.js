@@ -3,16 +3,22 @@ import {Form} from "semantic-ui-react";
 
 
 class SpectralType extends Component {
-  state = {
-    line: 'sl',
-    pol: 'xx'
-  };
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      line: 'sl',
+      pol: 'xx'
+    };
+
+    this.handleLineChange = this.handleLineChange.bind(this);
+    this.handlePolChange = this.handlePolChange.bind(this);
+  }
 
   handleLineChange = (e, line) => this.setState({line: line.value});
   handlePolChange = (e, pol) => this.setState({pol: pol.value});
 
   render() {
-    const {line, pol} = this.state;
     return (
       <Form>
         <Form.Group inline>
@@ -20,19 +26,19 @@ class SpectralType extends Component {
           <Form.Radio
             label="Spectral Line"
             value="sl"
-            checked={line === 'sl'}
+            checked={this.state.line === 'sl'}
             onChange={this.handleLineChange}
           />
           <Form.Radio
             label="Single Continuum"
             value="sc"
-            checked={line === 'sc'}
+            checked={this.state.line === 'sc'}
             onChange={this.handleLineChange}
           />
           <Form.Radio
             label="Spectral Scan"
             value="ss"
-            checked={line === 'ss'}
+            checked={this.state.line === 'ss'}
             onChange={this.handleLineChange}
           />
         </Form.Group>
@@ -42,19 +48,19 @@ class SpectralType extends Component {
           <Form.Radio
             label="XX"
             value="xx"
-            checked={pol === 'xx'}
+            checked={this.state.pol === 'xx'}
             onChange={this.handlePolChange}
           />
           <Form.Radio
             label="Dual"
             value="du"
-            checked={pol === 'du'}
+            checked={this.state.pol === 'du'}
             onChange={this.handlePolChange}
           />
           <Form.Radio
             label="Full"
             value="fu"
-            checked={pol === 'fu'}
+            checked={this.state.pol === 'fu'}
             onChange={this.handlePolChange}
           />
         </Form.Group>

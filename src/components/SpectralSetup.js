@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import {Grid, Header, Segment} from 'semantic-ui-react';
 import SpectralType from "./SpectralType";
+import SpectralControl from "./SpectralControl";
 
 class SpectralSetup extends Component {
   render() {
@@ -12,6 +13,7 @@ class SpectralSetup extends Component {
           </Header>
           <Segment attached="bottom">
             <div style={{height: '10em'}}/>
+            <SpectralControl/>
           </Segment>
         </Grid.Column>
         <Grid.Column tablet={16} largeScreen={6} widescreen={6}>

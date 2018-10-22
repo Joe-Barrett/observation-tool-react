@@ -10,9 +10,9 @@ class App extends Component {
     return (
       <div>
         <Navbar/>
-        <Container style={{marginTop: '4em'}}>
+        <div style={{marginTop: '4em', marginLeft: '4em', marginRight: '4em'}}>
           <SpectralSetup/>
-        </Container>
+        </div>
       </div>
     );
   }
