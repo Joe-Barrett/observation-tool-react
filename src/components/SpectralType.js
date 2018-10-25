@@ -1,13 +1,14 @@
 import React, {Component} from "react";
-import {string} from 'prop-types';
 import {Form} from "semantic-ui-react";
-
+import {string, func} from 'prop-types';
 
 class SpectralType extends Component {
 
   static propTypes = {
     type: string,
-    pol: string
+    onTypeChange: func,
+    pol: string,
+    onPolChange: func
   };
 
   static defaultProps ={

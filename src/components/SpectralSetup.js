@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import {Grid, Header, Segment} from 'semantic-ui-react';
 import SpectralType from "./SpectralType";
 import SpectralControl from "./SpectralControl";
+import SpectralViewer from "./SpectralViewer";
 
 class SpectralSetup extends Component {
 
@@ -33,7 +34,9 @@ class SpectralSetup extends Component {
               Visualisation
             </Header>
             <Segment attached="bottom">
-              <div style={{height: '10em'}}/>
+              <div style={{height: '30em', width: '100%', marginBottom: '2em'}}>
+                <SpectralViewer/>
+              </div>
               <SpectralControl
                 receiver={this.state.receiver}
                 onReceiverChange={this.handleReceiverChange}
