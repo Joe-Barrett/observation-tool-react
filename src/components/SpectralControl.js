@@ -13,7 +13,9 @@ class SpectralControl extends Component {
     dsb: bool,
     onDsbChange: func,
     lines: bool,
-    onLinesChange: func
+    onLinesChange: func,
+    col: string,
+    onColChange: func
   };
 
   render() {
@@ -58,11 +60,13 @@ class SpectralControl extends Component {
               label="Automatic"
               value="a"
               checked={this.props.col === 'a'}
+              onChange={this.props.onColChange}
             />
             <Form.Radio
               label="Manual"
               value="m"
               checked={this.props.col === 'm'}
+              onChange={this.props.onColChange}
             />
             {/*<Form.Select/>*/}
           </Form.Group>

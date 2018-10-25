@@ -19,7 +19,7 @@ class SpectralSetup extends Component {
   handleTransmissionChange = () => this.setState({transmission: !this.state.transmission});
   handleDsbChange = dsb => this.setState({dsb: !this.state.dsb});
   handleLinesChange = lines => this.setState({lines: !this.state.lines});
-  handleColChange = col => this.setState({col});
+  handleColChange = (e, col) => this.setState({col: col.value});
   handleTypeChange = (e, type) => this.setState({type: type.value});
   handlePolChange = (e, pol) => this.setState({pol: pol.value});
 
@@ -43,6 +43,8 @@ class SpectralSetup extends Component {
                 onDsbChange={this.handleDsbChange}
                 lines={this.state.lines}
                 onLinesChange={this.handleLinesChange}
+                col={this.state.col}
+                onColChange={this.handleColChange}
               />
             </Segment>
           </Grid.Column>
